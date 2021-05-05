@@ -26,11 +26,15 @@ class Repository(private val dao: SongsDao) {
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun insertPlaylist(playlist: Playlist) {
-        dao.insertPlaylist(Playlist(10,"play list one"))
-        dao.insertSong(Song(2,"song 1","ilaya raja"))
-        dao.insertSong(Song(3,"song 2","ilaya raja"))
-        dao.insert(PlaylistSongCrossRef(playlistId = 10, songId = 2))
-        dao.insert(PlaylistSongCrossRef(playlistId = 10, songId = 3))
+        dao.insertPlaylist(playlist)
+//        dao.insert(PlaylistSongCrossRef(playlistId = 10, songId = 3))
+
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insertCross(cross: PlaylistSongCrossRef) {
+        dao.insert(cross)
 
     }
 }

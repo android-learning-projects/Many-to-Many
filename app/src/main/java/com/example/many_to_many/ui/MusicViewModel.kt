@@ -1,10 +1,7 @@
 package com.example.many_to_many.ui
 
 import androidx.lifecycle.*
-import com.example.many_to_many.room.entities.Playlist
-import com.example.many_to_many.room.entities.PlaylistWithSongs
-import com.example.many_to_many.room.entities.Song
-import com.example.many_to_many.room.entities.SongWithPlaylists
+import com.example.many_to_many.room.entities.*
 import kotlinx.coroutines.launch
 
 class MusicViewModel(private val repository: Repository) : ViewModel() {
@@ -29,6 +26,10 @@ class MusicViewModel(private val repository: Repository) : ViewModel() {
      */
     fun insertPlaylist(playlist: Playlist) = viewModelScope.launch {
         repository.insertPlaylist(playlist)
+    }
+
+    fun insertCross(crossRef: PlaylistSongCrossRef) = viewModelScope.launch {
+        repository.insertCross(crossRef)
     }
 }
 
