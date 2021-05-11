@@ -35,7 +35,7 @@ class SongAdapter : RecyclerView.Adapter<SongAdapter.MyViewHolder>() {
     class MyViewHolder(view: LayoutSongItemBinding) : RecyclerView.ViewHolder(view.root) {
         private val binding = view
         fun bind(song: Song, position: Int) {
-            binding.textViewSongName.text = song.songName
+            binding.textViewSongName.text = "${song.songId}: ${song.songName}"
             binding.textViewArtist.text = song.artist
         }
     }

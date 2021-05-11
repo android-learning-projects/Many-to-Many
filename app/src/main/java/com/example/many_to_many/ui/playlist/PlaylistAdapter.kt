@@ -37,7 +37,7 @@ class PlaylistAdapter : RecyclerView.Adapter<PlaylistAdapter.MyViewHolder>() {
     class MyViewHolder(view: LayoutPlaylistItemBinding) : RecyclerView.ViewHolder(view.root) {
         private val binding = view
         fun bind(data: Playlist, position: Int) {
-            binding.textView.text = data.playlistName
+            binding.textView.text = "${data.playlistId}: ${data.playlistName}"
         }
     }
 
