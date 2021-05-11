@@ -1,5 +1,7 @@
 # Many-to-Many
-Many-to-Many relationship with room database
+Many-to-Many relationship with room database, Simple Room many-to-many relationship project
+
+
 <img src="https://github.com/livin-bad/Many-to-Many/blob/main/images/IMG_20210511_153526.jpg" width="300">
 
 Log
