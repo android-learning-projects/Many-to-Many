@@ -3,13 +3,17 @@
     package="com.example.many_to_many">
 
     <application
+        android:name=".AppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".AppApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ManytoMany">
+        <activity
+            android:name=".ui.TabbedActivity"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/Theme.ManytoMany.NoActionBar" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,19 +1,29 @@
 package com.example.many_to_many.ui
 
 import androidx.lifecycle.*
-import com.example.many_to_many.room.entities.*
+import com.example.many_to_many.data.room.entities.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MusicViewModel(private val repository: Repository) : ViewModel() {
+@HiltViewModel
+class MusicViewModel
+@Inject
+constructor(private val repository: Repository) : ViewModel() {
 
     // Using LiveData and caching what allWords returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    val getPlaylistsWithSongs: LiveData<List<PlaylistWithSongs>> = repository.getPlaylistsWithSongs.asLiveData()
+    val getPlaylistsWithSongs: LiveData<List<PlaylistWithSongs>> =
+        repository.getPlaylistsWithSongs.asLiveData()
 
-    val getSongsWithPlaylists: LiveData<List<SongWithPlaylists>> = repository.getSongsWithPlaylists.asLiveData()
+    val getSongsWithPlaylists: LiveData<List<SongWithPlaylists>> =
+        repository.getSongsWithPlaylists.asLiveData()
 
+
+    val getAllSongs: LiveData<List<Song>> = repository.getAllSongs.asLiveData()
+    val getAllPlaylist: LiveData<List<Playlist>> = repository.getAllPlaylist.asLiveData()
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */

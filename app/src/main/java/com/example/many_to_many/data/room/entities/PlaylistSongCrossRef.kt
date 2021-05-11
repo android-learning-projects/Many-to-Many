@@ -1,4 +1,4 @@
-package com.example.many_to_many.room.entities
+package com.example.many_to_many.data.room.entities
 
 import androidx.room.Entity
 
