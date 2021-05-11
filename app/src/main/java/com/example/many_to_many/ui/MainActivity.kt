@@ -71,13 +71,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonPlaylistWithSongs.setOnClickListener {
             viewModel.getPlaylistsWithSongs.observe(this, {
-                Log.d("TAG", "onCreate: ${it}")
+                Timber.d( "onCreate: ${it}")
             })
         }
 
         binding.buttonSongsWithPlaylist.setOnClickListener {
             viewModel.getSongsWithPlaylists.observe(this, {
-                Log.d("TAG", "onCreate: ${it}")
+                Timber.d( "onCreate: ${it}")
             })
         }
     }
